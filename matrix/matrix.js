@@ -4,12 +4,18 @@
 //
 
 export class Matrix {
-  constructor() {
-    
+  constructor(matrix) {
+    this.matrix = matrix;
+  }
+
+  rowConverter() {
+    let rows = this.matrix.split('\n').map(row => row.split(' '));
+    console.log(rows)
+    return rows.map(row => row.map(string => parseInt(string)))
   }
 
   get rows() {
-    
+    return this.rowConverter();
   }
 
   get columns() {
