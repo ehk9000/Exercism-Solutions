@@ -10,8 +10,19 @@ export class Matrix {
 
   rowConverter() {
     let rows = this.matrix.split('\n').map(row => row.split(' '));
-    console.log(rows)
-    return rows.map(row => row.map(string => parseInt(string)))
+    return rows.map(row => row.map(string => parseInt(string)));
+  }
+
+  columnConverter(rows) {
+    return rows.reduce((total, acc) => {
+      acc.forEach((num, index) => {
+        if (!total[index]) {
+          total[index] = []
+        }
+        total[index].push(num)
+      })
+      return total
+    }, [])
   }
 
   get rows() {
@@ -19,6 +30,7 @@ export class Matrix {
   }
 
   get columns() {
-    
+    const rows = this.rowConverter();
+    return this.columnConverter(rows);
   }
 }
