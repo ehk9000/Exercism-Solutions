@@ -5,7 +5,7 @@
 
 export const isPangram = (str) => {
   const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
-  let sentence = str.split('');
+  let sentence = str.toLowerCase().split('');
 
   return alphabet.every(letter => sentence.includes(letter))
 };
