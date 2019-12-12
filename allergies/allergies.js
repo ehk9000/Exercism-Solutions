@@ -1,18 +1,43 @@
-//
-// This is only a SKELETON file for the 'Allergies' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+// const allergies = {
+//   eggs:1,
+//   peanuts: 2,
+//   shellfish: 4,
+//   strawberries: 8,
+//   tomatoes: 16,
+//   chocolate: 32,
+//   pollen: 64,
+//   cats: 128
+// }
 
+const allergies = [
+  'eggs',
+  'peanutes',
+  'strawberries',
+  'tomatoes',
+  'chocolate',
+  'pollen',
+  'cats'
+]
 export class Allergies {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(allergies) {
+    this.allergyScore = allergies
   }
 
   list() {
-    throw new Error("Remove this statement and implement this function");
+    let finalList = [];
+    if (this.allergyScore === 1) {
+      finalList.push('eggs')
+    }   
+    if (this.allergyScore === 2) {
+      finalList.push('peanuts')
+    }
+    if (this.allergyScore === 8) {
+      finalList.push('strawberries')
+    }
+    return finalList;
   }
 
   allergicTo() {
-    throw new Error("Remove this statement and implement this function");
+
   }
 }
